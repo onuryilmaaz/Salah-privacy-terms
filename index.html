@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="tr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Salah — Gizlilik Politikası & Kullanım Koşulları</title>
+    <meta
+      name="description"
+      content="Salah uygulaması Gizlilik Politikası ve Kullanım Koşulları / Salah app Privacy Policy and Terms of Use." />
+    <style>
+      :root {
+        --teal: #0f766e;
+        --teal-600: #0d9488;
+        --bg: #f8fafc;
+        --card: #ffffff;
+        --text: #0f172a;
+        --muted: #64748b;
+        --border: #e2e8f0;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--text);
+        font-family:
+          -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+        line-height: 1.6;
+      }
+      .wrap {
+        max-width: 760px;
+        margin: 0 auto;
+        padding: 24px 18px 64px;
+      }
+      header.top {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 18px;
+      }
+      .logo {
+        width: 44px;
+        height: 44px;
+        border-radius: 12px;
+        background: var(--teal);
+        color: #fff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 20px;
+      }
+      .brand h1 {
+        font-size: 20px;
+        margin: 0;
+      }
+      .brand p {
+        margin: 2px 0 0;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .controls {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        align-items: center;
+        justify-content: space-between;
+        margin: 16px 0 10px;
+      }
+      .tabs {
+        display: inline-flex;
+        background: #e2e8f0;
+        border-radius: 14px;
+        padding: 4px;
+      }
+      .tabs button {
+        border: 0;
+        background: transparent;
+        padding: 8px 18px;
+        border-radius: 10px;
+        font-weight: 700;
+        font-size: 14px;
+        color: var(--muted);
+        cursor: pointer;
+      }
+      .tabs button.active {
+        background: var(--teal);
+        color: #fff;
+      }
+      .lang {
+        display: inline-flex;
+        border: 1px solid var(--border);
+        border-radius: 9px;
+        overflow: hidden;
+      }
+      .lang button {
+        border: 0;
+        background: #fff;
+        padding: 6px 12px;
+        font-weight: 700;
+        font-size: 12px;
+        color: var(--muted);
+        cursor: pointer;
+      }
+      .lang button.active {
+        background: var(--teal);
+        color: #fff;
+      }
+      .card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        padding: 22px 22px 8px;
+        box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+      }
+      .doc-heading {
+        margin: 0 0 2px;
+        font-size: 22px;
+      }
+      .updated {
+        color: var(--muted);
+        font-size: 13px;
+        margin: 0 0 18px;
+      }
+      .section h3 {
+        font-size: 16px;
+        margin: 0 0 4px;
+      }
+      .section p {
+        margin: 0 0 18px;
+        color: #334155;
+        white-space: pre-line;
+        font-size: 15px;
+      }
+      footer {
+        text-align: center;
+        color: var(--muted);
+        font-size: 13px;
+        margin-top: 22px;
+      }
+      footer a {
+        color: var(--teal-600);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #020617;
+          --card: #0f172a;
+          --text: #f1f5f9;
+          --muted: #94a3b8;
+          --border: #1e293b;
+        }
+        .tabs {
+          background: #1e293b;
+        }
+        .lang button {
+          background: transparent;
+        }
+        .section p {
+          color: #cbd5e1;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="top">
+        <div class="logo">S</div>
+        <div class="brand">
+          <h1>Salah</h1>
+          <p id="brand-sub">Gizlilik Politikası &amp; Kullanım Koşulları</p>
+        </div>
+      </header>
+
+      <div class="controls">
+        <div class="tabs">
+          <button id="tab-privacy" class="active" onclick="setDoc('privacy')"></button>
+          <button id="tab-terms" onclick="setDoc('terms')"></button>
+        </div>
+        <div class="lang">
+          <button id="lang-tr" class="active" onclick="setLang('tr')">TR</button>
+          <button id="lang-en" onclick="setLang('en')">EN</button>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 class="doc-heading" id="doc-heading"></h2>
+        <p class="updated" id="doc-updated"></p>
+        <div id="doc-sections"></div>
+      </div>
+
+      <footer>
+        <p id="footer-text"></p>
+      </footer>
+    </div>
+
+    <script>
+      var SUPPORT_EMAIL = 'onuryilm.41@gmail.com';
+
+      var LEGAL = {
+        privacy: {
+          tr: {
+            heading: 'Gizlilik Politikası',
+            updated: 'Son güncelleme: 17 Haziran 2026',
+            sections: [
+              { title: '1. Genel', body: 'Salah ("uygulama", "biz") gizliliğinize önem verir. Bu politika, uygulamayı kullandığınızda hangi verileri topladığımızı, bunları nasıl kullandığımızı ve haklarınızı açıklar. Uygulamayı kullanarak bu politikayı kabul etmiş olursunuz.' },
+              { title: '2. Topladığımız Veriler', body: '• Hesap bilgileri: e-posta, ad-soyad, kullanıcı adı, (varsa) telefon, cinsiyet ve profil fotoğrafı.\n• İbadet ve aktivite verileri: namaz kayıtları, kaza takibi, zikir, Kuran/hıfz ilerlemesi, oruç, sadaka, dua, hedefler ve istatistikler.\n• Konum: namaz vakitleri, kıble yönü ve yakındaki camiler için (yalnızca uygulamayı kullanırken).\n• Cihaz ve bildirim: bildirim gönderebilmek için push token ve temel cihaz bilgileri.\n• Aile özelliği: ebeveyn olarak oluşturduğunuz çocuk profilleri ve görev/ödül verileri.\n• Gruplar: katıldığınız gruplardaki paylaşılan aktiviteler.' },
+              { title: '3. Verileri Nasıl Kullanıyoruz', body: 'Verilerinizi yalnızca; hesabınızı yönetmek, ibadet takibi ve istatistik sunmak, namaz vakti/kıble/cami gibi özellikleri sağlamak, bildirim göndermek, uygulamayı iyileştirmek ve güvenliği sağlamak için kullanırız. Verilerinizi reklam amacıyla satmayız ve üçüncü taraflara pazarlama için aktarmayız.' },
+              { title: '4. Üçüncü Taraf Hizmetler', body: 'Hizmeti sağlamak için bazı güvenilir sağlayıcılarla çalışırız:\n• Clerk — Google/Apple ile güvenli giriş ve kimlik doğrulama.\n• Sentry — çökme ve hata teşhisi.\n• Cloudinary — profil/grup görselleri.\n• Apple / RevenueCat — (etkinleştirildiğinde) abonelik işlemleri; kart bilgilerinizi biz görmeyiz.\n• İçerik API\'leri (Diyanet, acikkuran.com, islamic.network) — namaz vakti, Kuran ve hadis içeriği.' },
+              { title: '5. Konum Verisi', body: 'Konumunuz yalnızca uygulamayı kullanırken ve izin verdiğinizde alınır; namaz vakitlerini hesaplamak, kıble yönünü göstermek ve yakındaki camileri listelemek için kullanılır. Konumunuz reklam veya takip amacıyla kullanılmaz. İzni cihaz ayarlarından dilediğiniz zaman kapatabilirsiniz.' },
+              { title: '6. Çocuklara İlişkin Veriler (Aile)', body: 'Aile özelliğinde çocuk profilleri yalnızca ebeveyn/veli tarafından oluşturulur ve yönetilir. Bu profillerdeki verilerden ve uygun yaş kullanımından ebeveyn sorumludur. Bir çocuğa ait veriyi silmek isterseniz ilgili profili uygulamadan kaldırabilir veya bizimle iletişime geçebilirsiniz.' },
+              { title: '7. Veri Saklama ve Güvenlik', body: 'Verileriniz, hesabınız aktif olduğu sürece saklanır. Verileri yetkisiz erişime karşı korumak için makul teknik ve idari önlemler (şifreli bağlantı, erişim kısıtları) uygularız. Hiçbir sistem %100 güvenli olmasa da güvenliği sağlamak için sürekli çalışırız.' },
+              { title: '8. Haklarınız', body: 'KVKK ve ilgili mevzuat kapsamında; verilerinize erişme, düzeltme, dışa aktarma ve silme haklarına sahipsiniz. Verilerinizi uygulama içindeki "Verilerimi Yedekle" ile JSON olarak dışa aktarabilirsiniz.' },
+              { title: '9. Hesap ve Veri Silme', body: 'Hesabınızı ve tüm verilerinizi uygulama içinden kalıcı olarak silebilirsiniz: Ayarlar → Hesap → "Hesabımı Kalıcı Olarak Sil". Bu işlem geri alınamaz ve tüm ibadet kayıtlarınız, gruplarınız, aile profilleriniz ve istatistikleriniz kalıcı olarak silinir.' },
+              { title: '10. Değişiklikler ve İletişim', body: 'Bu politikayı zaman zaman güncelleyebiliriz; önemli değişiklikleri uygulama üzerinden bildiririz. Sorularınız için: ' + SUPPORT_EMAIL }
+            ]
+          },
+          en: {
+            heading: 'Privacy Policy',
+            updated: 'Last updated: June 17, 2026',
+            sections: [
+              { title: '1. Overview', body: 'Salah ("the app", "we") respects your privacy. This policy explains what data we collect when you use the app, how we use it, and your rights. By using the app, you agree to this policy.' },
+              { title: '2. Data We Collect', body: '• Account info: email, name, username, phone (optional), gender, and profile photo.\n• Worship & activity data: prayer logs, missed-prayer (kaza) tracking, dhikr, Qur\'an/memorization progress, fasting, charity, dua, goals, and statistics.\n• Location: for prayer times, qibla direction, and nearby mosques (only while using the app).\n• Device & notifications: push token and basic device info to send notifications.\n• Family feature: child profiles you create as a parent, plus task/reward data.\n• Groups: shared activity within groups you join.' },
+              { title: '3. How We Use Data', body: 'We use your data only to manage your account, provide worship tracking and statistics, deliver features like prayer times/qibla/mosques, send notifications, improve the app, and ensure security. We do not sell your data for advertising or share it with third parties for marketing.' },
+              { title: '4. Third-Party Services', body: 'We rely on trusted providers to deliver the service:\n• Clerk — secure sign-in and authentication with Google/Apple.\n• Sentry — crash and error diagnostics.\n• Cloudinary — profile/group images.\n• Apple / RevenueCat — (when enabled) subscription processing; we never see your card details.\n• Content APIs (Diyanet, acikkuran.com, islamic.network) — prayer times, Qur\'an, and hadith content.' },
+              { title: '5. Location Data', body: 'Your location is accessed only while using the app and with your permission, to calculate prayer times, show qibla direction, and list nearby mosques. It is never used for advertising or tracking. You can disable the permission at any time in your device settings.' },
+              { title: '6. Children\'s Data (Family)', body: 'In the Family feature, child profiles are created and managed solely by a parent/guardian, who is responsible for the data in those profiles and for age-appropriate use. To delete a child\'s data, remove the profile in the app or contact us.' },
+              { title: '7. Data Retention & Security', body: 'Your data is retained while your account is active. We apply reasonable technical and organizational measures (encrypted connections, access controls) to protect it from unauthorized access. No system is 100% secure, but we work continuously to keep your data safe.' },
+              { title: '8. Your Rights', body: 'You have the right to access, correct, export, and delete your data. You can export your data as JSON via "Back Up My Data" in the app.' },
+              { title: '9. Account & Data Deletion', body: 'You can permanently delete your account and all data from within the app: Settings → Account → "Permanently Delete My Account". This is irreversible and permanently removes all your worship records, groups, family profiles, and statistics.' },
+              { title: '10. Changes & Contact', body: 'We may update this policy from time to time and will notify you of significant changes in the app. Questions: ' + SUPPORT_EMAIL }
+            ]
+          }
+        },
+        terms: {
+          tr: {
+            heading: 'Kullanım Koşulları',
+            updated: 'Son güncelleme: 17 Haziran 2026',
+            sections: [
+              { title: '1. Koşulların Kabulü', body: 'Salah uygulamasını kullanarak bu Kullanım Koşulları\'nı kabul etmiş olursunuz. Koşulları kabul etmiyorsanız lütfen uygulamayı kullanmayın.' },
+              { title: '2. Hesap ve Sorumluluklar', body: 'Hesabınızın güvenliğinden ve hesabınız altında gerçekleşen işlemlerden siz sorumlusunuz. Kayıt sırasında doğru bilgi vermeyi ve giriş bilgilerinizi gizli tutmayı kabul edersiniz.' },
+              { title: '3. Kabul Edilebilir Kullanım', body: 'Uygulamayı yalnızca yasal amaçlarla kullanmayı kabul edersiniz. Uygulamaya zarar vermek, başkalarının haklarını ihlal etmek, izinsiz erişim sağlamak veya hizmeti kötüye kullanmak yasaktır. Gruplarda paylaştığınız içerikten siz sorumlusunuz.' },
+              { title: '4. Dini İçerik Hakkında', body: 'Namaz vakitleri, kıble yönü ve diğer dini içerikler üçüncü taraf kaynaklardan ve hesaplamalardan elde edilir; yaklaşık değerler içerebilir. Önemli durumlarda yerel resmi kaynaklardan teyit etmeniz önerilir. Bu bilgilerin doğruluğu konusunda kesin garanti veremeyiz.' },
+              { title: '5. Fikri Mülkiyet', body: 'Uygulamanın tasarımı, logosu, yazılımı ve özgün içeriği bize aittir ve telif haklarıyla korunur. İzinsiz kopyalanamaz, dağıtılamaz veya türev çalışma oluşturulamaz. Üçüncü taraf içerikleri ilgili sahiplerine aittir.' },
+              { title: '6. Abonelikler ve Satın Alımlar', body: 'Uygulama şu anda temel özellikleriyle ücretsizdir. İleride premium abonelik sunulursa ödemeler Apple App Store üzerinden işlenir; ücretlendirme, yenileme ve iade koşulları Apple\'ın kurallarına tabidir. Aboneliği cihazınızın App Store ayarlarından yönetebilir veya iptal edebilirsiniz.' },
+              { title: '7. Hizmetin Sonlandırılması', body: 'Bu koşulları ihlal etmeniz halinde hesabınızı askıya alma veya sonlandırma hakkımız saklıdır. Siz de dilediğiniz zaman hesabınızı uygulama içinden silebilirsiniz.' },
+              { title: '8. Garanti Reddi ve Sorumluluk Sınırı', body: 'Uygulama "olduğu gibi" sunulur. Yürürlükteki yasaların izin verdiği ölçüde, uygulamanın kesintisiz veya hatasız olacağını garanti etmeyiz ve dolaylı zararlardan sorumlu tutulamayız.' },
+              { title: '9. Uygulanacak Hukuk', body: 'Bu koşullar Türkiye Cumhuriyeti yasalarına tabidir ve bu yasalara göre yorumlanır.' },
+              { title: '10. Değişiklikler ve İletişim', body: 'Bu koşulları zaman zaman güncelleyebiliriz. Güncellemelerden sonra uygulamayı kullanmaya devam etmeniz yeni koşulları kabul ettiğiniz anlamına gelir. İletişim: ' + SUPPORT_EMAIL }
+            ]
+          },
+          en: {
+            heading: 'Terms of Use',
+            updated: 'Last updated: June 17, 2026',
+            sections: [
+              { title: '1. Acceptance of Terms', body: 'By using the Salah app, you agree to these Terms of Use. If you do not accept these terms, please do not use the app.' },
+              { title: '2. Account & Responsibilities', body: 'You are responsible for the security of your account and for activity that occurs under it. You agree to provide accurate information at sign-up and to keep your login credentials confidential.' },
+              { title: '3. Acceptable Use', body: 'You agree to use the app only for lawful purposes. Harming the app, infringing others\' rights, gaining unauthorized access, or misusing the service is prohibited. You are responsible for content you share in groups.' },
+              { title: '4. About Religious Content', body: 'Prayer times, qibla direction, and other religious content are derived from third-party sources and calculations and may be approximate. For important matters, we recommend verifying with local official sources. We cannot guarantee absolute accuracy of this information.' },
+              { title: '5. Intellectual Property', body: 'The app\'s design, logo, software, and original content belong to us and are protected by copyright. They may not be copied, distributed, or used to create derivative works without permission. Third-party content belongs to its respective owners.' },
+              { title: '6. Subscriptions & Purchases', body: 'The app is currently free with its core features. If premium subscriptions are offered in the future, payments are processed through the Apple App Store; billing, renewal, and refund terms are subject to Apple\'s rules. You can manage or cancel a subscription in your device\'s App Store settings.' },
+              { title: '7. Termination', body: 'We reserve the right to suspend or terminate your account if you violate these terms. You may also delete your account at any time from within the app.' },
+              { title: '8. Disclaimer & Limitation of Liability', body: 'The app is provided "as is". To the extent permitted by applicable law, we do not warrant that the app will be uninterrupted or error-free, and we are not liable for indirect damages.' },
+              { title: '9. Governing Law', body: 'These terms are governed by and construed in accordance with the laws of the Republic of Türkiye.' },
+              { title: '10. Changes & Contact', body: 'We may update these terms from time to time. Continuing to use the app after updates means you accept the new terms. Contact: ' + SUPPORT_EMAIL }
+            ]
+          }
+        }
+      };
+
+      var LABELS = {
+        tr: { privacy: 'Gizlilik', terms: 'Koşullar', sub: 'Gizlilik Politikası & Kullanım Koşulları', footer: 'İletişim' },
+        en: { privacy: 'Privacy', terms: 'Terms', sub: 'Privacy Policy & Terms of Use', footer: 'Contact' }
+      };
+
+      var state = { doc: 'privacy', lang: navigator.language && navigator.language.indexOf('tr') === 0 ? 'tr' : 'en' };
+
+      function render() {
+        var c = LEGAL[state.doc][state.lang];
+        var labels = LABELS[state.lang];
+        document.documentElement.lang = state.lang;
+        document.getElementById('brand-sub').textContent = labels.sub;
+        document.getElementById('tab-privacy').textContent = labels.privacy;
+        document.getElementById('tab-terms').textContent = labels.terms;
+        document.getElementById('doc-heading').textContent = c.heading;
+        document.getElementById('doc-updated').textContent = c.updated;
+
+        var html = '';
+        for (var i = 0; i < c.sections.length; i++) {
+          var s = c.sections[i];
+          html +=
+            '<div class="section"><h3>' +
+            escapeHtml(s.title) +
+            '</h3><p>' +
+            escapeHtml(s.body) +
+            '</p></div>';
+        }
+        document.getElementById('doc-sections').innerHTML = html;
+
+        document.getElementById('footer-text').innerHTML =
+          labels.footer + ': <a href="mailto:' + SUPPORT_EMAIL + '">' + SUPPORT_EMAIL + '</a>';
+
+        document.getElementById('tab-privacy').className = state.doc === 'privacy' ? 'active' : '';
+        document.getElementById('tab-terms').className = state.doc === 'terms' ? 'active' : '';
+        document.getElementById('lang-tr').className = state.lang === 'tr' ? 'active' : '';
+        document.getElementById('lang-en').className = state.lang === 'en' ? 'active' : '';
+      }
+
+      function escapeHtml(str) {
+        return str
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;');
+      }
+
+      function setDoc(d) {
+        state.doc = d;
+        location.hash = d;
+        render();
+      }
+      function setLang(l) {
+        state.lang = l;
+        render();
+      }
+
+      // #privacy / #terms ile doğrudan açılış (App Store için ayrı linkler)
+      if (location.hash === '#terms') state.doc = 'terms';
+      render();
+    </script>
+  </body>
+</html>
