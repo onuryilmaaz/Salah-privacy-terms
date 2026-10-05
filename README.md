@@ -20,5 +20,12 @@
 - İstersen "Terms of Use (EULA)" alanına da `#terms` linkini ekleyebilirsin
   (zorunlu değil; abonelik eklersen önerilir).
 
+## Google Play Console
+
+- **App content → Privacy policy**: ana sayfa veya `#privacy` linki.
+- **App content → Data deletion → Delete account URL**: `#delete-account` linki
+  (gizlilik politikasının "Hesap ve Veri Silme" bölümüne kayar; uygulama içi adımları
+  ve uygulamasız e-posta ile silme talebini anlatır).
+
 > İçeriği güncellersen hem bu `index.html`'i hem uygulamadaki
 > `mobile/src/constants/legal.ts` dosyasını birlikte güncelle (ikisi aynı metin).
