@@ -28,4 +28,4 @@
   ve uygulamasız e-posta ile silme talebini anlatır).
 
 > İçeriği güncellersen hem bu `index.html`'i hem uygulamadaki
-> `mobile/src/constants/legal.ts` dosyasını birlikte güncelle (ikisi aynı metin).
+> `ios/Shared/mobile/src/constants/legal.ts` dosyasını birlikte güncelle (ikisi aynı metin), sonra `bun ios/scripts/gen-legal.ts` ve `sh android/scripts/sync-shared.sh`.
