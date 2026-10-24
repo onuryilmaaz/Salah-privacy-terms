@@ -28,4 +28,6 @@
   ve uygulamasız e-posta ile silme talebini anlatır).
 
 > İçeriği güncellersen hem bu `index.html`'i hem uygulamadaki
-> `ios/Shared/mobile/src/constants/legal.ts` dosyasını birlikte güncelle (ikisi aynı metin), sonra `bun ios/scripts/gen-legal.ts` ve `sh android/scripts/sync-shared.sh`.
+> uygulama içi metinleri de güncelle. Her platformun kendi sürümü var (TR/EN/AR):
+> iOS `ios/Shared/mobile/src/constants/legal.ts` (sonra `bun ios/scripts/gen-legal.ts`),
+> Android `android/app/src/main/assets/data/legal.json`. Web iki platformu birlikte anlatır.
