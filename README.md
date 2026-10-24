@@ -1,6 +1,6 @@
 # Salah — Yasal Sayfa (GitHub Pages)
 
-`index.html`: Gizlilik Politikası + Kullanım Koşulları (TR/EN). Uygulama içindeki
+`index.html`: Gizlilik Politikası + Kullanım Koşulları (TR/EN/AR; `?lang=ar` ile doğrudan dil seçilir). Uygulama içindeki
 `LegalModal` ile aynı içerik. App Store Connect zorunlu **Privacy Policy URL** alanı için.
 
 ## GitHub Pages ile yayınlama
